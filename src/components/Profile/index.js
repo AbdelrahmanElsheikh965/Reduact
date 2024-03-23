@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 export default function Profile() {
-  const data = useSelector((state) => state.ee);
+  const data = useSelector((state) => state.profile_information);
   console.log("data");
   console.log(data);
   return (
     <>
-      <p> Name : {data.userInfo.name} </p>
-      <p> Email : {data.userInfo.email} </p>
+      <p> Name : {data.user_data.name} </p>
+      <p> Email : {data.user_data.email} </p>
     </>
   )
 }

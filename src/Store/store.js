@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import dd from "./Slices/profileSlice";
+import profileData from "./Slices/profileSlice";
+import productsData from "./Slices/productsSlice";
 
 export default configureStore({
   reducer: {
-    ee: dd,
+    profile_information: profileData,
+    products_information: productsData,
   },
 });

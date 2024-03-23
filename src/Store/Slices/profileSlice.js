@@ -5,7 +5,7 @@ export const profileSlice = createSlice({
   initialState: {},
   reducers: {
     addUserInfo: (state, action) => {
-      state.userInfo = action.payload;
+      state.user_data = action.payload;
     }
   }
 });
