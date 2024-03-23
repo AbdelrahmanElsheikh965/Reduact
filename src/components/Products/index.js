@@ -8,7 +8,7 @@ import { getProductsThunk } from "../../Store/Slices/productsSlice";
 export default function Products() {
 
   const dispatch = useDispatch();
-  const { prods, isLoading } = useSelector((state) => state.products_information.products);
+  const { products, isLoading } = useSelector((state) => state.products_information.products);
 
   useEffect(() => {
     let mounted = true;
@@ -22,28 +22,18 @@ export default function Products() {
     };
   }, []);
 
-  // console.log(prods);
-
-  // const [products, setProducts] = useState([]);
-  // useEffect(() => {
-  //   fetch("https://dummyjson.com/products?limit=6")
-  //     .then((data) => data.json())
-  //     .then((data) => setProducts(data))
-  //     .catch((err) => console.log(err.message));
-  // }, []);
-
   return isLoading ? (
-    <p style={{ margin: "100px" }}>is Loadding.......</p>
-  ) : prods ? (
+    <p style={{ margin: "100px" }}>is Loading.......</p>
+  ) : products ? (
     <section id="work" className="portfolio-mf sect-pt4 route" style={{'width': '950px'}}>
       <div className="container">
         <div className="row">
           <section id="work" className="portfolio-mf sect-pt4 route" style={{'width': '950px'}}>
             <div className="container">
               <div className="row">
-                  {prods?.map((product)=>(
-                  <Card product={product}></Card>
-                ))}
+                  {products?.map((product)=>(
+                    <Card product={product}></Card>
+                  ))}
               </div>
             </div>
         </section>

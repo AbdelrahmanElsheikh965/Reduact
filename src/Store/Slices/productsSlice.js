@@ -3,7 +3,7 @@ import { axiosInstance } from "../../Axios/axios";
 
 export const getProductsThunk = createAsyncThunk(
 
-  "/products?limit=6",
+  "products",
   async () => {
     const results = await axiosInstance.get("/products?limit=6");
     return results.data;
@@ -21,7 +21,7 @@ export const productsSlice = createSlice({
     });
     builder.addCase(getProductsThunk.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.products = action.payload.products; // response
+      state.products = action.payload; // response
       state.pagination = {
         total: action.payload.total,
         skip: action.payload.skip,
@@ -35,5 +35,4 @@ export const productsSlice = createSlice({
   },
 });
 
-// export const { addUserInfo } = profileSlice.actions;
 export default productsSlice.reducer;
