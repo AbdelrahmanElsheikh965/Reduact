@@ -4,6 +4,7 @@ import Products from "./components/Products";
 import NavBar from "./components/nav";
 import Register from "./components/Register";
 import NotFound from "./components/notfound";
+import Profile from "./components/Profile";
 
 function Layout() {
   return (
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         element: <Product />,
         path: "/products/:id"
+      },
+      {
+        element: <Profile />,
+        path: "/profile"
       },
     ]
   },

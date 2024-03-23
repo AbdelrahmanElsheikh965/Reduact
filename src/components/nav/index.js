@@ -24,6 +24,14 @@ export default function NavBar() {
               </Link>
             </a>
           </li>
+
+          <li className="nav-item">
+            <a className="nav-link" href="#">
+              <Link to='/profile' > 
+                Profile | (data fetched from redux store)
+              </Link>
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

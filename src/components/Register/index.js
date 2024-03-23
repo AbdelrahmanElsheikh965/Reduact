@@ -1,10 +1,11 @@
 import React from "react";
 import "./index.css";
 import { useState, useEffect } from "react";
-import Card from "../card";
+import { useDispatch } from "react-redux";
+import { addUserInfo } from "../../Store/Slices/profileSlice";
 
 export default function Register() {
-
+  const dispatch = useDispatch();
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -97,6 +98,8 @@ export default function Register() {
       isSubmittedOrNot
     ) {
       alert('your form is errors-free')
+      console.log("update store");
+      dispatch(addUserInfo(data));
       console.log(data);
     }
   }, [errors]);

@@ -1,3 +1,2 @@
-# Part-2
+# Reduact
 
-deployed link: https://react-repo-git-part-2-abdelrahman-elsheikhs-projects.vercel.app/
